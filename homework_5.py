@@ -1,8 +1,12 @@
 """
 Запросить у пользователя число N - ширина треугольника.
 """
+import sys
 
-width = int(input("Enter the expected width: "))
+try:
+    width = int(input("Enter the expected width: "))
+except:
+    sys.exit("Enter correct number")
 
 """
 Вывести треугольник #1 с шириной N с помощью цикла for
@@ -59,10 +63,3 @@ space = width - 1
 for i in range(1, width + 1):
     print(" " * space + "*" * i)
     space -= 1
-
-
-
-
-
-
-
