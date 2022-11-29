@@ -54,7 +54,7 @@ mail.find("@") > 0, так как символ @ не может быть пер
 последним символов должна быть буква
 """
 
-mail = input("Enter email: ")
+mail = input("\nEnter email: ")
 result = "YES" if 0 < mail.find("@") < mail.rfind(".") and mail.count("@") == 1 and mail[-1].isalpha() else "NO"
 print(f"Email is correct: {result}")
 
