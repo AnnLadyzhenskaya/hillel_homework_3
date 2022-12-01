@@ -43,7 +43,7 @@ result_of_requested_access = []
 
 # Проверка имени файла
 def check_file_name(name):
-    if name.find(".") == -1 or len(name) < 3 or name.rfind(".") == len(name) - 1 or name.find(".") == 0:
+    if name.find(".") == -1 or len(name) < 3 or name.startswith(".") or name.endswith("."):
         sys.exit("Invalid file name")
     return True
 
