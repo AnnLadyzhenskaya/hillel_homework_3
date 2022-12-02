@@ -95,5 +95,27 @@ for num in A:
 print(f"Max number is {max_num}, min number is {min_num}")
 
 
+"""
+Задание 7:
+Пользователь вводит текст нужно вывести количество чисел в этом тексте
+Пример:
+> 'Lorem 222 ipsum, 123 dolor 1 sit amet
+Количество чисел: 3
+"""
+
+text_input = input("\nEnter text: ")
+
+# Убираем знаки препинания для кейсов 222? или 1! в тексте
+text_without_symbols = "".join(char for char in text_input if (char.isalnum() or char == " "))
+list_from_text = text_without_symbols.split()
+
+count_of_numbers = 0
+for i in list_from_text:
+    if i.isdigit():
+        count_of_numbers += 1
+
+print(f"\nКоличество чисел: {count_of_numbers}")
+
+
 
 
