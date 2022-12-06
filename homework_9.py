@@ -3,6 +3,7 @@
 Дан файл с произвольным текстом,
 необходимо найти все числа в файле и записать в список numbers
 """
+import random
 import sys
 
 #
@@ -16,7 +17,7 @@ import sys
 #             return int(word)
 #
 #
-# with open("res/txt/task_9.1.txt", "r") as f:
+# with open("res/txt/random_text.txt", "r") as f:
 #     numbers = [num for num in map(find_number, f) if num is not None]
 #
 # print(f"List of numbers: {numbers}")
@@ -68,5 +69,18 @@ import sys
 Задание 4
 Сгенерировать 100 рандомных чисел и записать их в файл random_numbers.txt, 
 где одна строка = одно число
+"""
+
+# random_numbers = [random.randint(1, 10000) for _ in range(100)]
+#
+# random_numbers_for_write = list(map(lambda x: str(x) + "\n", random_numbers))
+# with open("res/txt/random_numbers.txt", "w") as f:
+#     f.writelines(random_numbers_for_write)
+
+
+"""
+Задание 5
+Дан файл с произвольным текстом, 
+нужно найти количество слов в файле и вывести пользователю
 """
 
