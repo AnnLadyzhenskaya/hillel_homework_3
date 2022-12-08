@@ -1,12 +1,14 @@
+import random
+import sys
+import functools
+import itertools
+
+
 """
 Задание 1
 Дан файл с произвольным текстом,
 необходимо найти все числа в файле и записать в список numbers
 """
-import random
-import sys
-import functools
-import itertools
 
 
 def find_number(text):
@@ -14,15 +16,18 @@ def find_number(text):
     text_without_symbols = "".join(char for char in text if (char.isalnum() or char == " "))
 
     list_from_text = text_without_symbols.split()
+    nums = []
     for word in list_from_text:
         if word.isdigit():
-            return int(word)
+            nums.append(int(word))
+
+    return nums
 
 
 with open("res/txt/random_text.txt", "r") as f:
-    numbers = [num for num in map(find_number, f) if num is not None]
+    numbers = [num for num in map(find_number, f) if len(num) > 0]
 
-print(f"List of numbers: {numbers}")
+print(f"List of numbers: {list(itertools.chain(*numbers))}")
 
 
 """
@@ -36,7 +41,7 @@ with open("res/txt/data.txt", "w") as f:
 
 """
 Задание 3
-Запросить у пользователя число N и запросить N чисел у пользователя, 
+Запросить у пользователя число N и запросить N чисел у пользователя,
 потом записать их в файл numbers.txt через пробел
 """
 
@@ -69,7 +74,7 @@ with open("res/txt/numbers.txt", "w") as f:
 
 """
 Задание 4
-Сгенерировать 100 рандомных чисел и записать их в файл random_numbers.txt, 
+Сгенерировать 100 рандомных чисел и записать их в файл random_numbers.txt,
 где одна строка = одно число
 """
 
@@ -82,7 +87,7 @@ with open("res/txt/random_numbers.txt", "w") as f:
 
 """
 Задание 5
-Дан файл с произвольным текстом, 
+Дан файл с произвольным текстом,
 нужно найти количество слов в файле и вывести пользователю
 
 ЧИСЛА ТАКЖЕ СЧИТАЮ ОТДЕЛЬНЫМ СЛОВОМ, так как в ТЗ не указано обратное
@@ -99,7 +104,7 @@ print(f"Количество слов: {count}")
 
 """
 Задание 6
-Дан файл в котором записаны числа через пробел, 
+Дан файл в котором записаны числа через пробел,
 необходимо вывести пользователю сумму этих чисел
 
 Предполагаем, что в файле действительно только числа
@@ -115,7 +120,7 @@ print(f"Сумма чисел из файла numbers_for_sum.txt: {sum_of_nums}
 
 """
 Задание 7
-Дан файл в котором записан текст, необходимо вывести топ 5 строк 
+Дан файл в котором записан текст, необходимо вывести топ 5 строк
 которые чаще всего повторяются, пример:
 'в' - 20 раз
 'привет' - 10 раз
