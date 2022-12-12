@@ -4,7 +4,6 @@
 В исходном списке минимум 2 элемента.
 """
 import os.path
-import struct
 
 
 def change(lst):
