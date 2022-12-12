@@ -23,9 +23,10 @@ def change(lst):
     return lst
 
 
-# change([567, "String", (1, "Test", 4.5)])
-# change([567])
-# change(567)
+print("\nTask 1")
+change([567, "String", (1, "Test", 4.5)])
+change([567])
+change(567)
 
 """
 Напишите функцию to_dict(lst), которая принимает аргумент в виде списка 
@@ -60,8 +61,9 @@ def to_dict(lst):
     return dict_from_list
 
 
-# to_dict(["String", {34, False}, "Str2", 45, {"Str": 45, "Str2": "Str3"},
-#          45.5, True, [1, 45, "Str"], ("Str", []), (1, 2)])
+print("\nTask 2")
+to_dict(["String", {34, False}, "Str2", 45, {"Str": 45, "Str2": "Str3"},
+         45.5, True, [1, 45, "Str"], ("Str", []), (1, 2)])
 
 
 """
@@ -90,7 +92,8 @@ def sum_range(start, end):
     return result_sum
 
 
-# sum_range(15, 10)
+print("\nTask 3")
+sum_range(15, 10)
 
 
 """
@@ -116,7 +119,8 @@ def read_lines(lines, file):
         print("File does not exist")
 
 
-# read_lines(3, "/text.tx")
-# read_lines(3, "res/txt/random_text.txt")
+print("\nTask 4")
+read_lines(3, "/text.tx")
+read_lines(3, "res/txt/random_text.txt")
 
 
