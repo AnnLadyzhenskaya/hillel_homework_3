@@ -20,7 +20,7 @@ def call_times(filename):
                     data = f.readlines()
                 with open(filename, "w") as f:
                     for line in data:
-                        if f"{func.__name__}" not in line :
+                        if f"{func.__name__}" not in line:
                             f.write(line)
                         else:
                             f.write(f"{func.__name__} была вызвана {counts_dict[func]} раза.\n")
