@@ -13,18 +13,9 @@ def call_times(filename):
         def inner(*args, **kwargs):
             if func not in counts_dict.keys():
                 counts_dict[func] = 1
-                # with open(filename, "a") as f:
-                #     f.write(f"{func.__name__} была вызвана {counts_dict[func]} раза.\n")
+                with open(filename, "a") as f:
+                    f.write(f"{func.__name__} была вызвана {counts_dict[func]} раза.\n")
             else:
-                # counts_dict[func] += 1
-                # with open(filename, "r") as f:
-                #     data = f.readlines()
-                # with open(filename, "w") as f:
-                #     for line in data:
-                #         if f"{func.__name__}" not in line:
-                #             f.write(line)
-                #         else:
-                #             f.write(f"{func.__name__} была вызвана {counts_dict[func]} раза.\n")
 
                 with fileinput.FileInput(filename, inplace=True) as f:
                     for line in f:
