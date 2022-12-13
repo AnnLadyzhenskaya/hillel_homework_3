@@ -99,7 +99,7 @@ foo()
 boo()
 doo()
 
-duration = time.time() - start
+duration = time.time() - start  # 0.0030379295349121094
 print(f"v1 duration: {duration}")
 
 
@@ -112,6 +112,30 @@ foo_v2()
 boo_v2()
 doo_v2()
 
-duration_v2 = time.time() - start_v2
+duration_v2 = time.time() - start_v2    # 0.0020003318786621094
 print(f"v2 duration: {duration_v2}")
+
+with open("res/txt/duration.txt", "a") as f:
+    f.write(f" v1 {duration}\nv2 {duration_v2}\n\n")
+
+"""
+Results:
+ v1 0.005245208740234375
+v2 0.002819061279296875
+
+ v1 0.004370212554931641
+v2 0.008659839630126953 !!!!
+
+ v1 0.006290912628173828
+v2 0.0021741390228271484
+
+ v1 0.003696918487548828
+v2 0.0045239925384521484
+
+ v1 0.0044858455657958984
+v2 0.0022437572479248047
+
+ v1 0.004187107086181641
+v2 0.002228975296020508
+"""
 
