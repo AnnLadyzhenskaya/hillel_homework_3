@@ -4,6 +4,7 @@
 f'{func_name} была вызвана {count} раза.\n'
 """
 import fileinput
+import os.path
 import time
 
 
@@ -81,7 +82,15 @@ def boo_v2():
 def doo_v2():
     pass
 
+
 start = time.time()
+
+# если учитывать перезапуск скрипта
+if os.path.exists("res/txt/foo.txt"):
+    os.remove("res/txt/foo.txt")
+
+if os.path.exists("res/txt/calls.txt"):
+    os.remove("res/txt/calls.txt")
 
 foo()
 boo()
