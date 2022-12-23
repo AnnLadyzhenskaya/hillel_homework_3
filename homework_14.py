@@ -38,8 +38,11 @@ class Rectangle(Shape):
 
 def draw_shapes(shapes: list[Shape]) -> None:
     for shape in shapes:
-        shape.draw()
-        print()
+        if isinstance(shape, Shape):
+            shape.draw()
+            print()
+        else:
+            print(f"{shape} is not Shape instance")
 
 
 list_of_shapes = [Triangle(5), Rectangle(2, 5), Rectangle(4, 3), Triangle(3), Triangle(2)]
